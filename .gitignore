@@ -58,4 +58,4 @@ typings/
 .env
 
 # protecting bot security
-token.js
+config.json

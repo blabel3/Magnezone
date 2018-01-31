@@ -1,9 +1,8 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-const token = require('./token.js');
-
-const prefix = "!";
+const config = require('./config.json');
+const prefix = config.prefix;
 
 client.on('ready', () => {
   console.log('I am ready!');
@@ -24,4 +23,4 @@ client.on('message', message => {
 
 });
 
-client.login( token.botToken );
+client.login( config.token );

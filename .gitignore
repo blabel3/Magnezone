@@ -57,3 +57,5 @@ typings/
 # dotenv environment variables file
 .env
 
+# protecting bot security
+token.js

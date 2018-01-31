@@ -13,12 +13,21 @@ client.on('message', message => {
   //Check if mmessage starts with !, if it doesn't just exit. Speed.
   if ( !message.content.startsWith(prefix) || message.author.bot ) return;
 
-  if (message.content.startsWith(prefix + 'ping')) {
+  //Get command and arguments.
+  const args = message.content.slice(prefix.length).trim().split(/ +/g);
+  const command = args.shift().toLowerCase();
+
+  if (command === 'ping') {
     message.reply('pong');
   }
 
-  if (message.content.startsWith(prefix + 'foo')) {
+  if (command === 'foo') {
     message.reply("I'll give you the bar ;)");
+  }
+
+  if(command === 'husbandowar') {
+    let husbandosupreme = Math.floor( Math.random() * args.length);
+    message.reply(args[husbandosupreme] + " is objectively the best husbando.");
   }
 
 });

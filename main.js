@@ -3,14 +3,25 @@ const client = new Discord.Client();
 
 const token = require('./token.js');
 
+const prefix = "!";
+
 client.on('ready', () => {
   console.log('I am ready!');
 });
 
 client.on('message', message => {
-  if (message.content === 'ping') {
+
+  //Check if mmessage starts with !, if it doesn't just exit. Speed.
+  if ( !message.content.startsWith(prefix) || message.author.bot ) return;
+
+  if (message.content.startsWith(prefix + 'ping')) {
     message.reply('pong');
   }
+
+  if (message.content.startsWith(prefix + 'foo')) {
+    message.reply("I'll give you the bar ;)");
+  }
+
 });
 
 client.login( token.botToken );

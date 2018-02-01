@@ -1,3 +1,3 @@
-exports.run (client, message, args) => {
+exports.run = (client, message, args) => {
   message.reply("I'll give you the bar ;)");
 }

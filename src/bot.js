@@ -37,21 +37,6 @@ client.on('message', message => {
     console.error(err);
   }
 
-  /* Old series of if elses for each command (annoying)
-  if (command === 'ping') {
-    message.reply('pong');
-  }
-
-  if (command === 'foo') {
-    message.reply("I'll give you the bar ;)");
-  }
-
-  if(command === 'husbandowar') {
-    let husbandosupreme = Math.floor( Math.random() * args.length);
-    message.reply(args[husbandosupreme] + " is objectively the best husbando.");
-  }
-  */
-
 });
 
 client.login( config.token );

@@ -1,0 +1,24 @@
+{
+  "name": "Magnezone",
+  "version": "1.0.0",
+  "description": "Discord bot written with discord.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blabel3/Magnezone.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blabel3/Magnezone/issues"
+  },
+  "homepage": "https://github.com/blabel3/Magnezone#readme",
+  "dependencies": {
+    "discord.js": "^11.3.0",
+    "node-opus": "^0.2.7"
+  }
+}

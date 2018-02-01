@@ -9,7 +9,7 @@ const prefix = config.prefix;
 fs.readdir("./events/", (err, files) => {
   if (err) return console.error(err);
   files.forEach(file => {
-    let eventFunction = require(`./events/${file}`);
+    let eventFunction = require(`./src/events/${file}`);
     let eventName = file.split(".")[0];
     // strat to call events with their arguments, AFTER the client variable.
     client.on(eventName, (...args) => eventFunction.run(client, ...args));
@@ -31,7 +31,7 @@ client.on('message', message => {
 
   //Gets what to do for each command from the commands folder.
   try {
-    let commandFile = require(`./commands/${command}.js`);
+    let commandFile = require(`./src/commands/${command}.js`);
     commandFile.run(client, message, args);
   } catch (err) {
     console.error(err);

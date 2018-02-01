@@ -16,10 +16,6 @@ fs.readdir("./events/", (err, files) => {
   });
 });
 
-client.on('ready', () => {
-  console.log('I am ready!');
-});
-
 client.on('message', message => {
 
   //Check if mmessage starts with !, if it doesn't just exit. Speed.
@@ -30,10 +26,12 @@ client.on('message', message => {
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
 
+  //My rudimentary guard against commands that dig through the file system.
+  if( command.indexOf(".") != -1 ) return;
+
   //Gets what to do for each command from the commands folder.
-  //Still need to make sure the user doesn't do a diff file with their command.
   try {
-    let commandFile = require(`.commands/${command}.js`);
+    let commandFile = require(`./commands/${command}.js`);
     commandFile.run(client, message, args);
   } catch (err) {
     console.error(err);

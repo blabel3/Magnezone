@@ -21,6 +21,8 @@ client.on('message', message => {
   //Check if mmessage starts with !, if it doesn't just exit. Speed.
   if ( !message.content.startsWith(prefix) || message.author.bot ) return;
 
+  if ( message.channel.type === 'dm' || message.channel.type === 'group') return;
+
 
   //Get command and arguments.
   const args = message.content.slice(prefix.length).trim().split(/ +/g);

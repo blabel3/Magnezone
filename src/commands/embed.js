@@ -1,7 +1,33 @@
 exports.run = (config, client, message, args) => {
 
-  if (message.author.id != config.ownerid) return;
+  if (message.author.id != config.ownerID) return;
 
+  const embed = new client.discord.RichEmbed();
+
+  message.channel.send("Title?");
+  const collector = new client.discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 10000 });
+  console.log(collector)
+  async() => {
+    await collector.on('collect', message => {
+          if (message.content == "#") {
+              message.channel.send("No title.");
+          } else {
+              message.channel.send("Title: " + message.content);
+              embed.setTitle(message.content);
+          }
+      });
+
+    message.channel.send("Color?");
+
+    console.log("test");
+
+    message.guild.channels.find(channels => channels.name.toLowerCase() === "welcome").send({embed});
+
+  }
+
+
+
+/*
   const embed = {
     "title": "LURKER",
     "color": message.guild.roles.find(role => role.name.toLowerCase() === 'lurkers').color,
@@ -15,8 +41,5 @@ exports.run = (config, client, message, args) => {
     "thumbnail": {
       "url": "https://i.imgur.com/XAUKaO2.png"
     }
-  };
-
-  message.guild.channels.find(channels => channels.name.toLowerCase() === "welcome").send({embed});
-
+  };*/
 }

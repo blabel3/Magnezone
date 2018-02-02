@@ -6,7 +6,7 @@ const config = require('./config.json');
 const prefix = config.prefix;
 
 // Reads from the /events/ folder to match the event file with the event.
-fs.readdir("./events/", (err, files) => {
+fs.readdir("./src/events/", (err, files) => {
   if (err) return console.error(err);
   files.forEach(file => {
     let eventFunction = require(`./src/events/${file}`);

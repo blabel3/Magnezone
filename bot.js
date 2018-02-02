@@ -32,7 +32,7 @@ client.on('message', message => {
   //Gets what to do for each command from the commands folder.
   try {
     let commandFile = require(`./src/commands/${command}.js`);
-    commandFile.run(client, message, args);
+    commandFile.run(config, client, message, args);
   } catch (err) {
     console.error(err);
   }

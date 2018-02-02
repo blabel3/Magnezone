@@ -1,9 +1,16 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const fs = require("fs");
+//const Enmap = require('enmap');
+//const EnmapLevel = require('enmap-level');
 
 const config = require('./config.json');
 const prefix = config.prefix;
+
+//const warningSource = new EnmapLevel({name: "warnings"});
+//const warnings = new Enmap({provider: warningSource});
+
+//client.warnings = new Enmap({name: "warnings"});
 
 
 // Reads from the /events/ folder to match the event file with the event.

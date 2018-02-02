@@ -1,6 +1,6 @@
 exports.run = (config, client, message, args) => {
 
-  if (message.author.id != config.ownerid) return;
+  if (message.author.id != config.ownerID) return;
 
   const embed = {
     "title": "LURKER",

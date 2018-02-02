@@ -1,3 +1,3 @@
-exports.run = (client) => {
-  console.log(`Ready to help!`);
+exports.run = (config, client) => {
+  console.log(config.readyText);
 }

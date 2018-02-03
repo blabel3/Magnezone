@@ -7,6 +7,7 @@ client.discord = Discord;
 const config = require('./config.json');
 const prefix = config.prefix;
 
+
 // Reads from the /events/ folder to match the event file with the event.
 fs.readdir("./src/events/", (err, files) => {
   if (err) return console.error(err);
@@ -14,7 +15,7 @@ fs.readdir("./src/events/", (err, files) => {
     let eventFunction = require(`./src/events/${file}`);
     let eventName = file.split(".")[0];
     // strat to call events with their arguments, AFTER the client variable.
-    client.on(eventName, (...args) => eventFunction.run(client, ...args));
+    client.on(eventName, (...args) => eventFunction.run(config, client, ...args));
   });
 });
 

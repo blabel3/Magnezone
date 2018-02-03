@@ -18,3 +18,9 @@ exports.run = (config, client, message, args) => {
 
   message.member.addRole(role);
 }
+
+exports.info = {
+    name: 'roleme',
+    usage: 'roleme [rolename]',
+    description: "Automatically assigns you a role, if the bot has permission to assign that role."
+};

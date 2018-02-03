@@ -47,3 +47,9 @@ exports.run = (config, client, message, args) => {
   message.guild.channels.find(channels => channels.name.toLowerCase() === "welcome").send({embed});
 
 }
+
+exports.info = {
+    name: 'embed',
+    usage: 'embed',
+    description: "Owner only: posts the embed that's currently written in the file for this command."
+};

@@ -4,3 +4,9 @@ exports.run = (config, client, message, args) => {
   delete require.cache[require.resolve(`./${args[0]}.js`)];
   message.reply(`The command ${args[0]} has been reloaded`);
 };
+
+exports.info = {
+    name: 'reload',
+    usage: 'reload [command]',
+    description: 'Reloads the file for the command, updating its functionality.'
+};

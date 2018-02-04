@@ -10,6 +10,6 @@ exports.run = (client, message, args) => {
 exports.info = {
     name: 'reload',
     usage: 'reload [command]',
-    description: 'Reloads the file for the command, updating its functionality.'
+    description: 'Reloads the file for the command, updating its functionality.',
     permission: 'owner'
 };

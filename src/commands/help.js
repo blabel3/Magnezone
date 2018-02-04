@@ -23,8 +23,46 @@ exports.run = (client, message, args) => {
           let commandName = file.split(".")[0];
 
           //console.log(command);
+          if(message.author.id === client.config.ownerID) {
 
-          fields.push(getHelp(client, command));
+            switch (command.info.permission){
+              case 'owner':
+              case 'moderator':
+              case 'all':
+                fields.push(getHelp(client, command));
+                break;
+              default:
+                break;
+            }
+
+          } else if (message.author.id === client.config.moderatorID) {
+
+            switch (command.info.permission){
+              case 'owner':
+                break;
+              case 'moderator':
+              case 'all':
+                fields.push(getHelp(client, command));
+                break;
+              default:
+                break;
+            }
+
+          } else {
+
+            switch (command.info.permission){
+              case 'owner':
+                break;
+              case 'moderator':
+                break;
+              case 'all':
+                fields.push(getHelp(client, command));
+                break;
+              default:
+                break;
+            }
+
+          }
         })
 
         const embed = new client.discord.RichEmbed();
@@ -36,7 +74,7 @@ exports.run = (client, message, args) => {
         embed.color = message.guild.roles.find(role => role.name.toLowerCase() === 'bots').color;
         embed.title = "Commands:";
 
-        message.author.sendMessage({embed});
+        message.author.send({embed});
 
       });
 

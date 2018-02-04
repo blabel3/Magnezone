@@ -66,7 +66,7 @@ exports.run = (client, message, args) => {
 
         embed.setColor("#7289da");
         embed.setTitle("Commands");
-        embed.setFooter(`Magnezone v${client.config.version} made with love by Blabel`, "https://i.imgur.com/ZYi3t0N.png");
+        embed.setFooter(`Magnezone v${client.config.version} made by Blabel`, "https://i.imgur.com/ZYi3t0N.png");
 
         message.author.send({embed});
 

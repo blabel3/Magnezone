@@ -1,5 +1,28 @@
-# Chatot
-Discord bot written with discord.js
+# Magnezone
+
+Text focused general purpose & moderator bot written in [Discord.js](https://discord.js.org/#/).
+*because the world doesn't have enough of those.*
+
+## Capabilities
+
+### Commands
+
+#### General
+
+`ping` & `foo` - Bot responds with a message, good to check if it's functioning.
+
+
+#### Moderator
+
+
+#### Owner
+
+`embed` - Posts a RichEmbed to the specifications in the file.
+`reload` - Reloads the command, if anything's changed in the file.
+
+#### Meme
+
+`waifuwar` - I'll let you guess what this does.
 
 Todo:
 

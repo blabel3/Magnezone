@@ -12,7 +12,7 @@ exports.run = (client, message, args) => {
   //Command is run to show all helps.
   if (args.length === 0) {
 
-      var fields = [];
+      let fields = [];
 
       fs.readdir("./src/commands/", function(err, files) {
         if (err) return console.error(err);
@@ -83,7 +83,7 @@ exports.run = (client, message, args) => {
   //Command is run with a specific command to show
   else {
 
-    const command = require(`./${args[0]}`);
+    let command = require(`./${args[0]}`);
 
     if(command.info.permission === 'all'){
       const help = getHelp(client, command);

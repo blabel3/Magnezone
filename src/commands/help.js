@@ -2,8 +2,8 @@ const fs = require('fs');
 
 const getHelp = function (client, command) {
     return {
-        name: `\`${command.info.name}\``,
-        value: `Usage: \`${client.config.prefix}${command.info.usage}\`\nDescription: ${command.info.description}`
+        name: `${command.info.name}`,
+        value: `Usage: \`${client.config.prefix}${command.info.usage}\`\n${command.info.description}`
     };
 };
 
@@ -16,14 +16,27 @@ exports.run = (client, message, args) => {
       fs.readdir("./src/commands/", function(err, files) {
         if (err) return console.error(err);
 
+        console.log(files);
+
         files.forEach(file => {
-          let command = require(`./src/commands/${file}`);
+          let command = require(`./${file}`);
           let commandName = file.split(".")[0];
 
+          //console.log(command);
 
+          fields.push(getHelp(client, command));
         })
 
-        console.log(items);
+        const embed = new client.discord.RichEmbed();
+
+        for (let field of fields) {
+          embed.addField(field.name, field.value);
+        }
+
+        embed.color = message.guild.roles.find(role => role.name.toLowerCase() === 'bots').color;
+        embed.title = "Commands:";
+
+        message.author.sendMessage({embed});
 
       });
 
@@ -34,3 +47,9 @@ exports.run = (client, message, args) => {
   }
 
 }
+
+exports.info = {
+    name: 'help',
+    usage: 'help (command)',
+    description: "Explains the functionality of this bot or a specific command."
+};

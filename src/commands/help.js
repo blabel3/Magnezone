@@ -17,8 +17,6 @@ exports.run = (client, message, args) => {
       fs.readdir("./src/commands/", function(err, files) {
         if (err) return console.error(err);
 
-        console.log(files);
-
         files.forEach(file => {
           let command = require(`./${file}`);
           let commandName = file.split(".")[0];
@@ -32,8 +30,6 @@ exports.run = (client, message, args) => {
               case 'all':
                 fields.push(getHelp(client, command));
                 break;
-              default:
-                break;
             }
 
           } else if (message.author.id === client.config.moderatorID) {
@@ -44,8 +40,6 @@ exports.run = (client, message, args) => {
               case 'moderator':
               case 'all':
                 fields.push(getHelp(client, command));
-                break;
-              default:
                 break;
             }
 
@@ -59,8 +53,6 @@ exports.run = (client, message, args) => {
               case 'all':
                 fields.push(getHelp(client, command));
                 break;
-              default:
-                break;
             }
 
           }
@@ -72,8 +64,9 @@ exports.run = (client, message, args) => {
           embed.addField(field.name, field.value);
         }
 
-        embed.color = message.guild.roles.find(role => role.name.toLowerCase() === 'bots').color;
-        embed.title = "Commands:";
+        embed.setColor("#7289da");
+        embed.setTitle("Commands");
+        embed.setFooter(`Magnezone v${client.config.version} made with love by Blabel`, "https://i.imgur.com/ZYi3t0N.png");
 
         message.author.send({embed});
 
@@ -89,8 +82,9 @@ exports.run = (client, message, args) => {
       const help = getHelp(client, command);
 
       const embed = new client.discord.RichEmbed();
-      embed.addField(help.name, help.value);
-      embed.color = message.guild.roles.find(role => role.name.toLowerCase() === 'bots').color;
+      embed.setTitle(help.name);
+      embed.setDescription(help.value);
+      embed.setColor("#7289da");
 
       message.channel.send({embed});
     } else if (command.info.permission === 'moderator'){
@@ -98,8 +92,9 @@ exports.run = (client, message, args) => {
         const help = getHelp(client, command);
 
         const embed = new client.discord.RichEmbed();
-        embed.addField(help.name, help.value);
-        embed.color = message.guild.roles.find(role => role.name.toLowerCase() === 'bots').color;
+        embed.setTitle(help.name);
+        embed.setDescription(help.value);
+        embed.setColor("#7289da");
 
         message.channel.send({embed});
       } else {
@@ -110,8 +105,9 @@ exports.run = (client, message, args) => {
         const help = getHelp(client, command);
 
         const embed = new client.discord.RichEmbed();
-        embed.addField(help.name, help.value);
-        embed.color = message.guild.roles.find(role => role.name.toLowerCase() === 'bots').color;
+        embed.setTitle(help.name);
+        embed.setDescription(help.value);
+        embed.setColor("#7289da");
 
         message.channel.send({embed});
       } else {

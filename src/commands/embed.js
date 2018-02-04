@@ -1,6 +1,6 @@
-exports.run = (config, client, message, args) => {
+exports.run = (client, message, args) => {
 
-  if (message.author.id != config.ownerID) return;
+  if (message.author.id != client.config.ownerID) return;
 
 /*
   const embed = new client.discord.RichEmbed();

@@ -1,6 +1,7 @@
 # Magnezone
 
 Text focused general purpose & moderator bot written in [Discord.js](https://discord.js.org/#/).
+
 *because the world doesn't have enough of those.*
 
 ## Capabilities
@@ -25,11 +26,10 @@ Text focused general purpose & moderator bot written in [Discord.js](https://dis
 
 `waifuwar` - I'll let you guess what this does.
 
-Todo:
+### Todo:
 
 **Misc**:
 
-* **!help**
 * serverinfo
 * flipcoin
 * roll [x`d`y]

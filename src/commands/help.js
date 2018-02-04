@@ -9,6 +9,7 @@ const getHelp = function (client, command) {
 
 exports.run = (client, message, args) => {
 
+  //Command is run to show all helps.
   if (args.length === 0) {
 
       var fields = [];
@@ -78,9 +79,18 @@ exports.run = (client, message, args) => {
 
       });
 
-  } else {
+  }
+  //Command is run with a specific command to show
+  else {
 
+    const command = require(`./${args[0]}`);
+    const help = getHelp(client, command);
 
+    const embed = new client.discord.RichEmbed();
+    embed.addField(help.name, help.value);
+    embed.color = message.guild.roles.find(role => role.name.toLowerCase() === 'bots').color;
+
+    message.channel.send({embed});
 
   }
 

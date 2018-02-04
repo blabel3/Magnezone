@@ -84,13 +84,40 @@ exports.run = (client, message, args) => {
   else {
 
     const command = require(`./${args[0]}`);
-    const help = getHelp(client, command);
 
-    const embed = new client.discord.RichEmbed();
-    embed.addField(help.name, help.value);
-    embed.color = message.guild.roles.find(role => role.name.toLowerCase() === 'bots').color;
+    if(command.info.permission === 'all'){
+      const help = getHelp(client, command);
 
-    message.channel.send({embed});
+      const embed = new client.discord.RichEmbed();
+      embed.addField(help.name, help.value);
+      embed.color = message.guild.roles.find(role => role.name.toLowerCase() === 'bots').color;
+
+      message.channel.send({embed});
+    } else if (command.info.permission === 'moderator'){
+      if (message.author.id === client.config.moderatorID || message.author.id === client.config.ownerID){
+        const help = getHelp(client, command);
+
+        const embed = new client.discord.RichEmbed();
+        embed.addField(help.name, help.value);
+        embed.color = message.guild.roles.find(role => role.name.toLowerCase() === 'bots').color;
+
+        message.channel.send({embed});
+      } else {
+        message.reply("You do not have the permission to use this command.");
+      }
+    } else if (command.info.permission === 'owner'){
+      if(message.author.id === client.config.ownerID){
+        const help = getHelp(client, command);
+
+        const embed = new client.discord.RichEmbed();
+        embed.addField(help.name, help.value);
+        embed.color = message.guild.roles.find(role => role.name.toLowerCase() === 'bots').color;
+
+        message.channel.send({embed});
+      } else {
+        message.reply("You do not have the permission to use this command.");
+      }
+    }
 
   }
 

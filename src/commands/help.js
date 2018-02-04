@@ -51,5 +51,6 @@ exports.run = (client, message, args) => {
 exports.info = {
     name: 'help',
     usage: 'help (command)',
-    description: "Explains the functionality of this bot or a specific command."
+    description: "Explains the functionality of this bot or a specific command.",
+    permission: 'all'
 };

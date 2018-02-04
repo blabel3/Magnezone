@@ -5,5 +5,6 @@ exports.run = (client, message, args) => {
 exports.info = {
     name: 'foo',
     usage: 'foo',
-    description: 'Responds with bar, used for testing.'
+    description: 'Responds with bar, used for testing.',
+    permission: 'all'
 };

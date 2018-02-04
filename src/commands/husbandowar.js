@@ -6,5 +6,6 @@ exports.run = (client, message, args) => {
 exports.info = {
     name: 'husbandowar',
     usage: 'husbandowar [husbando1] [husbando2] (husbando3) ...',
-    description: 'Determines which husbando is objectively superior.'
+    description: 'Determines which husbando is objectively superior.',
+    permission: 'all'
 };

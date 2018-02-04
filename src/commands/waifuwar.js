@@ -7,4 +7,5 @@ exports.info = {
     name: 'waifuwar',
     usage: 'waifuwar [waifu1] [waifu2] (waifu3) ...',
     description: 'Determines which waifu is objectively superior.'
+    permission: 'all'
 };

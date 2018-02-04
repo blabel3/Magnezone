@@ -9,6 +9,7 @@ Text focused general purpose & moderator bot written in [Discord.js](https://dis
 
 #### General
 
+`help` - Describes all commands the user has permission to use. (better than the README even).
 `ping` & `foo` - Bot responds with a message, good to check if it's functioning.
 
 

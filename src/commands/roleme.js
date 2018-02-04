@@ -1,5 +1,5 @@
-exports.run = (config, client, message, args) => {
-  if( message.channel.id != config.welcomeID) return;
+exports.run = (client, message, args) => {
+  if( message.channel.id != client.config.welcomeID) return;
 
   //Role them based on what they typed
   const role = message.member.guild.roles.find(role => role.name.toLowerCase() === args[0].toLowerCase() );
@@ -18,3 +18,10 @@ exports.run = (config, client, message, args) => {
 
   message.member.addRole(role);
 }
+
+exports.info = {
+    name: 'roleme',
+    usage: 'roleme [rolename]',
+    description: "Automatically assigns you a role, if the bot has permission to assign that role.",
+    permission: 'all'
+};

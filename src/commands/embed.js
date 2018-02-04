@@ -1,6 +1,6 @@
-exports.run = (config, client, message, args) => {
+exports.run = (client, message, args) => {
 
-  if (message.author.id != config.ownerID) return;
+  if (message.author.id != client.config.ownerID) return;
 
 /*
   const embed = new client.discord.RichEmbed();
@@ -47,3 +47,10 @@ exports.run = (config, client, message, args) => {
   message.guild.channels.find(channels => channels.name.toLowerCase() === "welcome").send({embed});
 
 }
+
+exports.info = {
+    name: 'embed',
+    usage: 'embed',
+    description: "Owner only: posts the embed that's currently written in the file for this command.",
+    permission: 'owner'
+};

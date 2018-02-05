@@ -1,8 +1,31 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const fs = require("fs");
+const prompt = require("prompt-sync")();
 
 client.discord = Discord;
+
+if(!fs.existsSync('./config.json')){
+
+  let token = prompt('Bot token: ');
+  let prefix = prompt('Command prefix: ');
+  let ownerID = prompt('Owner ID: ');
+  let moderatorID = prompt('Moderator Role ID: ');
+  let welcomeID = prompt('Welcome Channel ID: ')
+
+  const configFile = {
+    token: token,
+    prefix: prefix,
+    ownerID: ownerID,
+    moderatorID: moderatorID,
+    welcomeID: welcomeID
+  }
+
+  console.log(configFile);
+
+  fs.writeFileSync("./config.json", JSON.stringify(configFile), (err) => console.error);
+
+}
 
 const config = require('./config.json');
 const prefix = config.prefix;

@@ -5,6 +5,7 @@ const prompt = require("prompt-sync")();
 
 client.discord = Discord;
 
+//Creates config file if run without one
 if(!fs.existsSync('./config.json')){
 
   let token = prompt('Bot token: ');

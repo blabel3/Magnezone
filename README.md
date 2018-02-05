@@ -10,21 +10,20 @@ Text focused general purpose & moderator bot written in [Discord.js](https://dis
 
 #### General
 
-`help` - Describes all commands the user has permission to use. (better than the README even).
-`ping` & `foo` - Bot responds with a message, good to check if it's functioning.
+* `help` - Describes all commands the user has permission to use. (better than the README even).
+* `ping` & `foo` - Bot responds with a message, good to check if it's functioning.
 
+#### Meme
+
+* `waifuwar` & `husbandowar` - Tells the server who's the best.
 
 #### Moderator
 
 
 #### Owner
 
-`embed` - Posts a RichEmbed to the specifications in the file.
-`reload` - Reloads the command, if anything's changed in the file.
-
-#### Meme
-
-`waifuwar` - I'll let you guess what this does.
+* `embed` - Posts a RichEmbed to the specifications in the file.
+* `reload` - Reloads the command, if anything's changed in the file.
 
 ### Todo:
 

@@ -37,12 +37,10 @@ Text focused general purpose & moderator bot written in [Discord.js](https://dis
 
 **Moderator**:
 
-* purge <mention> <number>
 * role [mention] [rolename]
 * warn [user] <reason>
 * warnings [user]
 * mute [user] [limit] [reason]
 * unmute [user] <reason>
 * kick [user] [reason]
-* ban [user] [reason]
 * unban [user] <reason>

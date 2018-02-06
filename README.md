@@ -19,6 +19,9 @@ Text focused general purpose & moderator bot written in [Discord.js](https://dis
 
 #### Moderator
 
+* `purge` - Deletes messages from the channel it's called in.
+* `kick` - Kicks a user from the server.
+* `ban` - Bans a user from the server.
 
 #### Owner
 

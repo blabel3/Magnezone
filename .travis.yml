@@ -1,3 +1,7 @@
 language: node_js
 
+node_js:
+  - "node"
+  - "lts/*"
+
 #Testing node_js on the latest version. Runs yarn test.

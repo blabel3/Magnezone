@@ -1,19 +1,12 @@
 exports.run = (client, message, args) => {
 
-  let maxMessages = 10;
   let deletedMessages = 0;
 
   console.log("potato");
 
-  if (message.author.id === client.config.ownerID){
-    maxMessages = 1000;
-  } else if (message.member.roles.get(client.config.moderatorID) != undefined){
-    maxMessages = 100;
-  } else {
-    return;
-  }
+  if (message.author.id != client.config.ownerID && message.member.roles.get(client.config.moderatorID) == undefined) return;
 
-  console.log(maxMessages);
+  const maxMessages = 100;
 
   if(args.length === 0){
 

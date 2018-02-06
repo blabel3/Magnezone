@@ -15,7 +15,7 @@ if(!fs.existsSync('./config.json')){
   let moderatorID = prompt('Moderator Role ID: ');
   let welcomeID = prompt('Welcome Channel ID: ');
 
-  let readyText = prompt('What should I say on ready? ', 'Ready to help out!');
+  let readyText = prompt('What should I say on ready? ', 'BZZZZT, READY!');
 
   const configFile = {
     version: version,

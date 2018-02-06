@@ -21,4 +21,8 @@
     "discord.js": "^11.3.0",
     "prompt-sync": "^4.1.5"
   }
+
+  "scripts" {
+    "test": "node bot.js"
+  }
 }

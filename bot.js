@@ -46,7 +46,7 @@ fs.readdir("./src/events/", (err, files) => {
     let eventFunction = require(`./src/events/${file}`);
     let eventName = file.split(".")[0];
     // strat to call events with their arguments, AFTER the client variable.
-    client.on(eventName, (...args) => eventFunction.run(config, client, ...args));
+    client.on(eventName, (...args) => eventFunction.run(client, ...args));
   });
 });
 

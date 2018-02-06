@@ -11,6 +11,6 @@ exports.run = (client, message, args) => {
 exports.info = {
     name: 'kick',
     usage: 'kick [user] (reason)',
-    description: 'Kicks a user, with an optional reason for logs.',
+    description: 'MOD: Kicks a user, with an optional reason for logs.',
     permission: 'moderator'
 };

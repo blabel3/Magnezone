@@ -52,6 +52,6 @@ exports.run = (client, message, args) => {
 exports.info = {
     name: 'purge',
     usage: 'purge (number) (mentions)',
-    description: 'Scans the number of messages specified and deletes them, only those from some members if mentions are specified.',
+    description: 'MOD: Scans the number of messages specified and deletes them, only those from some members if mentions are specified.',
     permission: 'moderator'
 }

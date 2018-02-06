@@ -17,7 +17,7 @@ exports.run = (client, message, args) => {
       });
     }).then(() => {
       message.channel.send(`:white_check_mark: Deleted ${deletedMessages} messages!`)
-        .then(response => response.delete(2000));
+        .then(response => response.delete(3000));
     }).catch(console.error);
 
   } else if (args.length === 1){
@@ -29,7 +29,7 @@ exports.run = (client, message, args) => {
       });
     }).then(() => {
       message.channel.send(`:white_check_mark: Deleted ${deletedMessages} messages!`)
-        .then(response => response.delete(2000));
+        .then(response => response.delete(3000));
     }).catch(console.error);
 
   } else {
@@ -43,7 +43,7 @@ exports.run = (client, message, args) => {
       });
     }).then(() => {
       message.channel.send(`:white_check_mark: Deleted ${deletedMessages} messages!`)
-        .then(response => response.delete(2000));
+        .then(response => response.delete(3000));
     }).catch(console.error);
 
   }

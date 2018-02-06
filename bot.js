@@ -8,18 +8,23 @@ client.discord = Discord;
 //Creates config file if run without one
 if(!fs.existsSync('./config.json')){
 
+  let version = "0.1";
   let token = prompt('Bot token: ');
   let prefix = prompt('Command prefix: ');
   let ownerID = prompt('Owner ID: ');
   let moderatorID = prompt('Moderator Role ID: ');
-  let welcomeID = prompt('Welcome Channel ID: ')
+  let welcomeID = prompt('Welcome Channel ID: ');
+
+  let readyText = prompt('What should I say on ready? ', 'Ready to help out!');
 
   const configFile = {
+    version: version,
     token: token,
     prefix: prefix,
     ownerID: ownerID,
     moderatorID: moderatorID,
-    welcomeID: welcomeID
+    welcomeID: welcomeID,
+    readyText: readyText
   }
 
   console.log(configFile);

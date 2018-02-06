@@ -1,4 +1,7 @@
 exports.run = (client, message, args) => {
+
+  if (message.author.id != client.config.ownerID || message.author.id === client.config.moderatorID) return;
+
   let person = message.mentions.members.first();
   //slice to get rid of the mentions
   let reason = args.slice(1).join(" ");

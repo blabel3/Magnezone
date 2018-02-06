@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/blabel3/Magnezone#readme",
   "dependencies": {
-    "discord.js": "^11.3.0"
+    "discord.js": "^11.3.0",
+    "prompt-sync": "^4.1.5"
   }
 }

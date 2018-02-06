@@ -1,6 +1,6 @@
 exports.run = (client, message, args) => {
 
-  if (message.author.id != client.config.ownerID || message.author.id === client.config.moderatorID) return;
+  if (message.author.id != client.config.ownerID && message.member.roles.get(client.config.moderatorID) == undefined) return;
 
   let person = message.mentions.members.first();
   //slice to get rid of the mentions

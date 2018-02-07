@@ -12,6 +12,7 @@ Text focused general purpose & moderator bot written in [Discord.js](https://dis
 
 * `help` - Describes all commands the user has permission to use. (better than the README even).
 * `ping` & `foo` - Bot responds with a message, good to check if it's functioning.
+* `whois` - Outputs some details about the user.
 
 #### Meme
 
@@ -33,7 +34,6 @@ Text focused general purpose & moderator bot written in [Discord.js](https://dis
 * flipcoin
 * roll [x`d`y]
 * rps [rock, paper, scissors]
-* whois [mention]
 
 **Moderator**:
 

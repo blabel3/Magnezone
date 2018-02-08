@@ -32,7 +32,7 @@ exports.run = (client, message, args) => {
                 break;
             }
 
-          } else if (message.author.id === client.config.moderatorID) {
+          } else if (message.member.roles.get(client.config.moderatorID) != undefined) {
 
             switch (command.info.permission){
               case 'owner':

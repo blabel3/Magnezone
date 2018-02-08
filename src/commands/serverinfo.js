@@ -12,14 +12,7 @@ exports.run = (client, message, args) => {
     embed.addField("Owner:", message.guild.owner.user.username);
     embed.addField("Region:", message.guild.region);
 
-    let emojis = [];
-
-    for (let emoji of message.guild.emojis.array()){
-      emojis.push("<:" + emoji.name + ":" + emoji.id + ">");
-    }
-
-    embed.addField("Emojis:", emojis.join(" "));
-
+    embed.addField("Emojis:", message.guild.emojis.map(e=>e.toString()).join(" "));
 
     message.channel.send({embed});
   } else {

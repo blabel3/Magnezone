@@ -17,6 +17,7 @@ if(!fs.existsSync('./config.json')){
 
   let readyText = prompt('What should I say on ready? ', 'BZZZZT, READY!');
   let responseTimeout = prompt('Response Timeout: ', 3000);
+  let autopurgeChannelIDs = prompt('AutopurgeChannelIDs: ').split(" ");
 
   const configFile = {
     version: version,

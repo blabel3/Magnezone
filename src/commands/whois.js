@@ -15,7 +15,7 @@ exports.run = (client, message, args) => {
   embed.addField("Joined server:", formatDate(person.joinedAt));
 
   if(person.roles.first() != null){
-    embed.addField("Roles:", person.roles..map(r=>r.toString()).join(" "));
+    embed.addField("Roles:", person.roles.map(r=>r.toString()).join(" "));
   }
 
   message.channel.send({embed});

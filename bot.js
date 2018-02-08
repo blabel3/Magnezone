@@ -16,6 +16,7 @@ if(!fs.existsSync('./config.json')){
   let welcomeID = prompt('Welcome Channel ID: ');
 
   let readyText = prompt('What should I say on ready? ', 'BZZZZT, READY!');
+  let responseTimeout = prompt('Response Timeout: ', 3000);
 
   const configFile = {
     version: version,
@@ -24,7 +25,8 @@ if(!fs.existsSync('./config.json')){
     ownerID: ownerID,
     moderatorID: moderatorID,
     welcomeID: welcomeID,
-    readyText: readyText
+    readyText: readyText,
+    responseTimeout: responseTimeout
   }
 
   console.log(configFile);

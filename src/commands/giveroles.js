@@ -2,7 +2,7 @@ exports.run = (client, message, args) => {
 
   if (message.author.id != client.config.ownerID && message.member.roles.get(client.config.moderatorID) == undefined) return;
   if (message.mentions.members.first() == undefined ) {
-    message.reply("No user given.").then(response => response.delete(3000));
+    message.reply("No user given.").then(response => response.delete(client.config.responseTimeout));
     return;
   }
 
@@ -17,7 +17,7 @@ exports.run = (client, message, args) => {
 
   if(roles != null){
     person.addRoles(roles);
-    message.reply("Done!").then(response => response.delete(3000));
+    message.reply("Done!").then(response => response.delete(client.config.responseTimeout));
   } else {
     message.reply("No valid roles given.");
   }

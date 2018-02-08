@@ -51,6 +51,6 @@ exports.run = (client, message, args) => {
 exports.info = {
     name: 'embed',
     usage: 'embed',
-    description: "Owner only: posts the embed that's currently written in the file for this command.",
+    description: "OWNER: posts the embed that's currently written in the file for this command.",
     permission: 'owner'
 };

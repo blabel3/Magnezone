@@ -15,7 +15,7 @@ if(!fs.existsSync('./config.json')){
   let moderatorID = prompt('Moderator Role ID: ');
   let welcomeID = prompt('Welcome Channel ID: ');
 
-  let readyText = prompt('What should I say on ready? ', 'Ready to help out!');
+  let readyText = prompt('What should I say on ready? ', 'BZZZZT, READY!');
 
   const configFile = {
     version: version,
@@ -46,7 +46,7 @@ fs.readdir("./src/events/", (err, files) => {
     let eventFunction = require(`./src/events/${file}`);
     let eventName = file.split(".")[0];
     // strat to call events with their arguments, AFTER the client variable.
-    client.on(eventName, (...args) => eventFunction.run(config, client, ...args));
+    client.on(eventName, (...args) => eventFunction.run(client, ...args));
   });
 });
 

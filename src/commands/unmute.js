@@ -7,14 +7,12 @@ exports.run = (client, message, args) => {
   }
 
   let person = message.mentions.members.first();
-  //slice to get rid of the mentions
-  let reason = args.slice(1).join(" ");
-  person.kick(reason);
+  person.removeRole(message.member.guild.roles.find('name', 'Muted'));
 }
 
 exports.info = {
-    name: 'kick',
-    usage: 'kick [user] (reason)',
-    description: 'MOD: Kicks a user, with an optional reason for logs.',
+    name: 'unmute',
+    usage: 'unmute [user]',
+    description: 'MOD: Unmutes a user by removing a role from them.',
     permission: 'moderator'
 };

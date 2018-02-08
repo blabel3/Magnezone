@@ -19,6 +19,7 @@ Text focused general purpose & moderator bot written in [Discord.js](https://dis
 
 #### Moderator
 
+* `addroles` & `removeroles` - Manage a user's roles in bulk by name.
 * `purge` - Deletes messages from the channel it's called in.
 * `mute` - Mutes a user with a role (not just muting them in Voice Chat)
 * `unmute` - Removes the mute role from them, letting them speak.
@@ -42,6 +43,5 @@ Text focused general purpose & moderator bot written in [Discord.js](https://dis
 
 **Moderator**:
 
-* role [mention] [rolename]
 * warn [user] <reason>
 * warnings [user]

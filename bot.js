@@ -8,7 +8,7 @@ client.discord = Discord;
 //Creates config file if run without one
 if(!fs.existsSync('./config.json')){
 
-  let version = "0.1";
+  let version = "0.2";
   let token = prompt('Bot token: ');
   let prefix = prompt('Command prefix: ');
   let ownerID = prompt('Owner ID: ');

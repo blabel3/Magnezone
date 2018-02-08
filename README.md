@@ -2,7 +2,7 @@
 
 Text focused general purpose & moderator bot written in [Discord.js](https://discord.js.org/#/).
 
-*because the world doesn't have enough of those.*
+*Because the world doesn't have enough of those.*
 
 ## Capabilities
 
@@ -13,6 +13,7 @@ Text focused general purpose & moderator bot written in [Discord.js](https://dis
 * `help` - Describes all commands the user has permission to use. (better than the README even).
 * `ping` & `foo` - Bot responds with a message, good to check if it's functioning.
 * `whois` - Outputs some details about the user.
+* `serverinfo` - Outputs some details about the server.
 
 #### Meme
 
@@ -36,7 +37,6 @@ Text focused general purpose & moderator bot written in [Discord.js](https://dis
 
 **Misc**:
 
-* serverinfo
 * flipcoin
 * roll [x`d`y]
 * rps [rock, paper, scissors]

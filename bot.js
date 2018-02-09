@@ -27,7 +27,8 @@ if(!fs.existsSync('./config.json')){
     moderatorID: moderatorID,
     welcomeID: welcomeID,
     readyText: readyText,
-    responseTimeout: responseTimeout
+    responseTimeout: responseTimeout,
+    autopurgeChannelIDs: autopurgeChannelIDs
   }
 
   console.log(configFile);

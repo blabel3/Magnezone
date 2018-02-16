@@ -1,8 +1,10 @@
 exports.run = (client, message, args) => {
   if( message.channel.id != client.config.welcomeID) return;
 
+  const messageCopy = Object.assign({}, message);
+
   //Role them based on what they typed
-  const role = message.member.guild.roles.find(role => role.name.toLowerCase() === args[0].toLowerCase() );
+  const role = messageCopy.member.guild.roles.find(role => role.name.toLowerCase() === args[0].toLowerCase() );
 
   // Making sure users can't mod themselves. (Shouldn't be neccessary given good role management anyway and putting bots low.)
   //if( role.hasPermission('ADMINISTRATOR') || role.hasPermission('MANAGE_GUILD') || role.hasPermission('BAN_MEMBERS') ) return;
@@ -12,7 +14,7 @@ exports.run = (client, message, args) => {
     case 'artists':
     case 'writers':
     case 'coders' :
-      message.member.addRole(message.member.guild.roles.find('name', 'Contributors'));
+      message.member.addRole(messageCopy.member.guild.roles.find('name', 'Contributors'));
       break;
   }
 

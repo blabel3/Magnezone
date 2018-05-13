@@ -2,7 +2,7 @@
 
 Text focused general purpose & moderator bot written in [Discord.js](https://discord.js.org/#/).
 
-*Because the world doesn't have enough of those.*
+*Because the world doesn't have enough of those!*
 
 ## Capabilities
 
